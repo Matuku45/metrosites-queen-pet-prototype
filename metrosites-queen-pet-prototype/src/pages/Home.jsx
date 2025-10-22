@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { ShoppingCart, Tag, Star } from "lucide-react";
 import ProductCard from "../components/ProductCard";
 
-// Example featured products
+// Featured products with numeric prices
 const featuredProducts = [
-  { name: "Premium Dog Food", price: "$25.99", category: "Food", rating: 5 },
-  { name: "Luxury Cat Bed", price: "$49.99", category: "Accessories", rating: 4 },
-  { name: "Interactive Pet Toy", price: "$19.99", category: "Toys", rating: 5 },
+  { name: "Premium Dog Food", price: 25.99, category: "Food", rating: 5 },
+  { name: "Luxury Cat Bed", price: 49.99, category: "Accessories", rating: 4 },
+  { name: "Interactive Pet Toy", price: 19.99, category: "Toys", rating: 5 },
 ];
 
 export default function Home() {
@@ -49,7 +49,7 @@ export default function Home() {
         </button>
       </motion.div>
 
-      {/* Featured Products */}
+      {/* Featured Products Grid */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -59,7 +59,7 @@ export default function Home() {
         {featuredProducts.map((product, index) => (
           <ProductCard key={index} product={product}>
             <div className="flex justify-between items-center mt-4">
-              <span className="text-gray-700 font-semibold">{product.price}</span>
+              <span className="text-gray-700 font-semibold">${product.price.toFixed(2)}</span>
               <div className="flex items-center">
                 {Array.from({ length: product.rating }).map((_, i) => (
                   <Star key={i} className="text-yellow-400 mr-1" size={16} />
@@ -82,6 +82,7 @@ export default function Home() {
           Explore All Products <ShoppingCart className="inline ml-2" size={20} />
         </button>
       </motion.div>
+
     </div>
   );
 }
