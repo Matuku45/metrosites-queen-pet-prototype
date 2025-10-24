@@ -1,15 +1,11 @@
-// src/pages/Home.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import { ShoppingCart, Tag, Star } from "lucide-react";
-import ProductCard from "../components/ProductCard";
+import { ShoppingCart, Tag } from "lucide-react";
 
-// Featured products with numeric prices
-const featuredProducts = [
-  { name: "Premium Dog Food", price: 25.99, category: "Food", rating: 5 },
-  { name: "Luxury Cat Bed", price: 49.99, category: "Accessories", rating: 4 },
-  { name: "Interactive Pet Toy", price: 19.99, category: "Toys", rating: 5 },
-];
+// Import first three images
+import catfood from "../assets/catfood.webp";
+import cattoy from "../assets/cattoy.webp";
+import combforpet from "../assets/combforpet.webp";
 
 export default function Home() {
   return (
@@ -33,51 +29,61 @@ export default function Home() {
         </button>
       </motion.div>
 
-      {/* Promotional Banner */}
+      {/* Three Image Section */}
+    <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.3, duration: 0.8 }}
+  className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12"
+>
+  <img
+    src={catfood}
+    alt="Cat Food"
+    className="w-full rounded-xl shadow-md object-contain h-48"
+  />
+  <img
+    src={cattoy}
+    alt="Cat Toy"
+    className="w-full rounded-xl shadow-md object-contain h-48"
+  />
+  <img
+    src={combforpet}
+    alt="Pet Comb"
+    className="w-full rounded-xl shadow-md object-contain h-48"
+  />
+</motion.div>
+
+
+      {/* Limited Time Offer (text only) */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
+        transition={{ delay: 0.6, duration: 0.8 }}
         className="w-full max-w-6xl mb-12 p-6 bg-gradient-to-r from-pink-100 via-yellow-100 to-pink-100 rounded-xl shadow-lg flex flex-col md:flex-row justify-between items-center"
       >
         <div className="text-center md:text-left mb-4 md:mb-0">
-          <h2 className="text-2xl font-bold mb-2 text-[oklch(70%_0.05_50)]">Limited Time Offer!</h2>
-          <p className="text-gray-700">Get 20% off on all premium pet toys and accessories!</p>
+          <h2 className="text-2xl font-bold mb-2 text-[oklch(70%_0.05_50)]">
+            Limited Time Offer!
+          </h2>
+          <p className="text-gray-700">
+            Get 20% off on all premium pet toys and accessories!
+          </p>
         </div>
         <button className="btn btn-primary bg-gradient-to-r from-pink-400 to-yellow-400 text-white border-none hover:scale-105 transition-transform">
           Grab the Deal <Tag className="inline ml-2" size={20} />
         </button>
       </motion.div>
 
-      {/* Featured Products Grid */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-        className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
-      >
-        {featuredProducts.map((product, index) => (
-          <ProductCard key={index} product={product}>
-            <div className="flex justify-between items-center mt-4">
-              <span className="text-gray-700 font-semibold">${product.price.toFixed(2)}</span>
-              <div className="flex items-center">
-                {Array.from({ length: product.rating }).map((_, i) => (
-                  <Star key={i} className="text-yellow-400 mr-1" size={16} />
-                ))}
-              </div>
-            </div>
-          </ProductCard>
-        ))}
-      </motion.div>
-
       {/* Call-to-Action Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.9, duration: 0.8 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
         className="mt-16 text-center"
       >
-        <h2 className="text-3xl font-bold mb-4 text-[oklch(70%_0.05_50)]">Your Pet Deserves the Best!</h2>
+        <h2 className="text-3xl font-bold mb-4 text-[oklch(70%_0.05_50)]">
+          Your Pet Deserves the Best!
+        </h2>
         <button className="btn bg-gradient-to-r from-pink-400 to-yellow-400 text-white border-none hover:scale-105 transition-transform">
           Explore All Products <ShoppingCart className="inline ml-2" size={20} />
         </button>

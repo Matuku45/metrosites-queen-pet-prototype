@@ -1,4 +1,3 @@
-// src/components/ProductCard.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { ShoppingCart } from "lucide-react";
@@ -12,18 +11,20 @@ export default function ProductCard({ product, children }) {
       transition={{ duration: 0.3 }}
       className="card bg-white shadow-lg rounded-xl p-6 flex flex-col justify-between hover:shadow-2xl transition-shadow"
     >
-      {/* Product Image / Icon */}
+      {/* Product Image */}
       <div className="flex flex-col items-center mb-4">
-        <div className="w-32 h-32 mb-4 bg-gradient-to-br from-pink-100 to-yellow-100 rounded-full flex items-center justify-center">
-          <ShoppingCart size={40} className="text-pink-400" />
-        </div>
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-32 h-32 object-cover rounded-full mb-4"
+        />
         <h3 className="text-lg font-bold text-gray-800">{product.name}</h3>
         <span className="text-gray-600">{product.category}</span>
       </div>
 
-      {/* Price */}
+      {/* Price in ZAR */}
       <div className="text-xl font-semibold text-gray-800 mb-4 text-center">
-        ${product.price.toFixed(2)}
+        R {product.price.toLocaleString()}
       </div>
 
       {/* Actions / Children */}
