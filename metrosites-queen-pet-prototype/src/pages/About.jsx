@@ -1,4 +1,3 @@
-// src/pages/About.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { Users, Heart, Award } from "lucide-react";
@@ -32,19 +31,19 @@ export default function About() {
         transition={{ delay: 0.6, duration: 0.8 }}
         className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
       >
-        <div className="card bg-white shadow-xl p-6 text-center hover:scale-105 transition-transform">
+        <div className="card bg-white shadow-xl p-6 text-center rounded-xl hover:scale-105 transition-transform">
           <Users size={50} className="text-pink-400 mx-auto mb-4" />
           <h2 className="text-xl font-semibold mb-2">Our Community</h2>
           <p className="text-gray-600">We celebrate pets and pet owners by providing a premium shopping experience and fostering a supportive community.</p>
         </div>
 
-        <div className="card bg-white shadow-xl p-6 text-center hover:scale-105 transition-transform">
+        <div className="card bg-white shadow-xl p-6 text-center rounded-xl hover:scale-105 transition-transform">
           <Heart size={50} className="text-pink-400 mx-auto mb-4" />
           <h2 className="text-xl font-semibold mb-2">Our Mission</h2>
           <p className="text-gray-600">To provide high-quality products that enrich the lives of pets and make every pet owner proud of their purchase.</p>
         </div>
 
-        <div className="card bg-white shadow-xl p-6 text-center hover:scale-105 transition-transform">
+        <div className="card bg-white shadow-xl p-6 text-center rounded-xl hover:scale-105 transition-transform">
           <Award size={50} className="text-pink-400 mx-auto mb-4" />
           <h2 className="text-xl font-semibold mb-2">Our Quality</h2>
           <p className="text-gray-600">All our products are carefully curated for quality, durability, and safety, ensuring pets get the best of the best.</p>
