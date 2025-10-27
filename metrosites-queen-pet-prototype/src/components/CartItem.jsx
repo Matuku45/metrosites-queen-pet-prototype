@@ -7,7 +7,7 @@ export default function CartItem({ item, onRemove, onQuantityChange }) {
       <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded" />
       <div className="flex-1 ml-4">
         <h3 className="font-semibold text-lg">{item.name}</h3>
-        <p className="text-gray-500">${item.price}</p>
+        <p className="text-gray-500">R{item.price}</p>
       </div>
       <input
         type="number"
