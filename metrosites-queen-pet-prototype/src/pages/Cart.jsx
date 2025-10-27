@@ -45,12 +45,17 @@ export default function Cart() {
   };
 
   return (
-    <div className="p-6 bg-gradient-to-b from-pink-50 to-yellow-50 min-h-screen">
-      <h1 className="text-4xl font-bold mb-8 text-[oklch(70%_0.05_50)] text-center">
-        🛍️ Your Shopping Cart
-      </h1>
+    <div className="min-h-screen bg-gradient-to-b from-pink-100 via-yellow-50 to-pink-50 flex flex-col items-center p-6">
+      {/* 🛍️ Header */}
+      <header className="w-full text-center mt-8 mb-10">
+        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-yellow-500 drop-shadow-md animate-fadeIn">
+          🛍️ Your Shopping Cart
+        </h1>
+        <p className="text-gray-600 mt-2 text-lg">Review your items before checkout</p>
+      </header>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      {/* 🧺 Cart Content */}
+      <div className="w-full max-w-6xl grid md:grid-cols-2 gap-10">
         <div className="space-y-6">
           {cartItems.length > 0 ? (
             cartItems.map((item) => (
@@ -62,12 +67,13 @@ export default function Cart() {
               />
             ))
           ) : (
-            <p className="text-gray-600 text-center text-lg">
-              Your cart is empty. Start shopping now!
-            </p>
+            <div className="bg-white p-6 rounded-xl shadow-md text-center">
+              <p className="text-gray-500 text-lg">Your cart is empty. Start shopping now!</p>
+            </div>
           )}
         </div>
 
+        {/* 🧾 Summary */}
         <CartSummary cartItems={cartItems} />
       </div>
     </div>
