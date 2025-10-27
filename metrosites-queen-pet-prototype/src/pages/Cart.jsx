@@ -2,28 +2,32 @@ import React, { useState } from "react";
 import CartItem from "../components/CartItem";
 import CartSummary from "../components/CartSummary";
 
-// Mock Data
+// ✅ Static image imports
+import catfood from "../assets/catfood.webp";
+import cattoy from "../assets/cattoy.webp";
+import combforpet from "../assets/combforpet.webp";
+
 const MOCK_CART = [
   {
     id: 1,
-    name: "Premium Dog Food",
+    name: "Premium Cat Food",
     price: 25.99,
     quantity: 2,
-    image: "https://via.placeholder.com/150?text=Premium+Dog+Food",
+    image: catfood,
   },
   {
     id: 2,
     name: "Cat Toy",
     price: 9.99,
     quantity: 1,
-    image: "https://via.placeholder.com/150?text=Cat+Toy",
+    image: cattoy,
   },
   {
     id: 3,
     name: "Pet Comb",
     price: 15.5,
     quantity: 1,
-    image: "https://via.placeholder.com/150?text=Pet+Comb",
+    image: combforpet,
   },
 ];
 
